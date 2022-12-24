@@ -74,7 +74,7 @@ public class FirstTest {
         int betweenStart = 3;
         int betweenEnd = 6;
 
-        for (int i = 1; i <= number; i++) {
+        for (int i = 1; i < number; i++) {
             if (isDivisor(number, i)) {
                 count++;
 
@@ -117,6 +117,14 @@ public class FirstTest {
             }
         }
         System.out.println(judgeWin(count));
+
+        // 간단하게 랜덤 숫자를 설정하는 법
+//        if (number == 0) {
+//            number = 1;
+//        }
+
+        // String msg = win ? "당첨" : "꽝;
+        // sout(msg)
     }
 
     private static String judgeWin(int count) {
