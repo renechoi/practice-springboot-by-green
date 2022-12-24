@@ -1,13 +1,12 @@
 package day1;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class SecondTest {
     public static void main(String[] args) {
-        problem8();
+        problem9();
 
     }
 
@@ -120,7 +119,7 @@ public class SecondTest {
         int c[] = {0, 0, 0, 0, 0};
 
         for (int i = 4; i >= 0; i--) {
-            if (arr[i] %2 != 0) {
+            if (arr[i] % 2 != 0) {
                 c[i] = arr[i];
             }
         }
@@ -301,52 +300,95 @@ public class SecondTest {
     }
 
     private static void problem9() {
-        /*
+    /*
 	[기념일]
 	철수와 영희는 3월 3일에 만났다.
 	철수는 영희와 100일 기념일에 축하파티를 할려고한다.
 	만난지 100일뒤는  몇월몇일인가?
 	단 윤년은 계산하지않는다.
-*/
-
-        int monthList[] =
-                {31, 28, 31, 30,
+    */
+        int[] monthList =
+                {0, 31, 28, 31, 30,
                         31, 30, 31, 31,
                         30, 31, 30, 31};
         int day = 3;
         int month = 3;
+        int countDays = 1;
 
-        // 3월 => 31 - 3 => 28 + 1
-        // 4월 => 30 - 1 => 29 + 1
-        // 5월 => 31 -1 => 30 + 1
-
-        for (int i = 1; i <= 100; i++) {
-
+        // calculate n-day
+        while (countDays != 100) {
+            if (day > monthList[month]) {
+                month = addUpMonth(month);
+                day = 1;
+                continue;
+            }
+            day++;
+            countDays++;
         }
 
+        System.out.printf("month %d day %d", month, day);
+
+    }
+
+    private static int addUpMonth(int month) {
+        if (month <= 11) {
+            month++;
+            return month;
+        }
+        month = 1;
+        return month;
     }
 
 
     private static void problem10() {
 
-        /*
+    /*
 	[왼쪽오른쪽]
 	랜덤으로 숫자(1,2)를 저장하고
 	숫자가 1이면 왼쪽으로 밀기
 	숫자가 2이면 오른쪽으로 밀기
  	예) 1) left ==> arr = {2,3,4,5,0,0,0,0,0};
  	예) 2) right ==> arr = {0,0,0,0,0,2,3,4,5};
-*/
+    */
         int arr[] = {0, 2, 0, 3, 4, 0, 0, 5, 0};
-        int select = 2;
+        move(arr, generateRandomNumber());
+        System.out.println(Arrays.toString(arr));
 
-        int idx = 0;
+    }
+
+    private static int generateRandomNumber() {
+        Random random = new Random();
+        int select = random.nextInt(2) - 1;
+        return select;
+    }
+
+    private static void move(int[] arr, int select) {
+        if (select == 1) {
+            deployLeft(arr);
+            return;
+        }
+        deployRight(arr);
+    }
+
+    private static void deployRight(int[] arr) {
+        int count = arr.length - 1;
+        for (int i = arr.length - 1; i > 0; i--) {
+            if (arr[i] != 0) {
+                arr[count] = arr[i];
+                arr[i] = 0;
+                count--;
+            }
+        }
+    }
+
+    private static void deployLeft(int[] arr) {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
-
-            arr[count] = i;
+            if (arr[i] != 0) {
+                arr[count] = arr[i];
+                arr[i] = 0;
+                count++;
+            }
         }
-
-
     }
 }
