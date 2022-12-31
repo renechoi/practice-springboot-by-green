@@ -6,10 +6,9 @@ import java.util.stream.IntStream;
 
 public class ArrayTest1 {
     public static void main(String[] args) {
-        problem4();
+        problem1();
 
     }
-
 
     private static void problem1() {
         int a[] = {10, 49, 51, 36, 17};
@@ -22,24 +21,17 @@ public class ArrayTest1 {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 
-//      Arrays.stream(a)
-//                .filter(v -> v == number)
-//                .mapToObj(idx -> String.format("%d", a[idx]))
-//                .forEach(System.out::println);
-////                .orElseThrow(()->new IllegalArgumentException("값이 존재하지 않습니다"));
+        try {
+            int answer = IntStream.range(0, a.length)
+                    .filter(v -> a[v] == number)
+                    .boxed()
+                    .findFirst()
+                    .orElseThrow(() -> new IllegalArgumentException("값이 존재하지 않습니다"));
 
-//        System.out.println(found);
-
-//
-//        System.out.println(IntStream.range(0, a.length)
-//                .mapToObj(v -> a[v] == number)
-//                .filter(v->v==true)
-//                .map(v->String.format("%d", v)).findFirst().toString());
-////                .
-////                .forEach(System.out::println);
-////                .orElseThrow(()->new IllegalArgumentException("값이 존재하지 않습니다"));
-
-
+            System.out.println(answer);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 
@@ -99,7 +91,7 @@ public class ArrayTest1 {
 
         // solution 2
 
-        for (int i =0; i<arr.length; i+=2){
+        for (int i = 0; i < arr.length; i += 2) {
             if (arr[i] == studentId) {
                 System.out.println(arr[i + 1]);
             }
