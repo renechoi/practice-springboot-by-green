@@ -1,4 +1,4 @@
-package day2;
+package day2.array;
 
 public class DArrayTest1 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package day2;
+package day2.array;
 
 import java.util.Arrays;
 import java.util.Scanner;
