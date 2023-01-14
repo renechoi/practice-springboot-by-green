@@ -95,10 +95,7 @@ public class ControllerStep1 {
                 System.out.print("삽입 값 입력 : ");
                 int data = scan.nextInt();
 
-                for (int i = getCountCurrentArray(arr) - 1; i >= index; i--) {
-                    arr[i + 1] = arr[i];
-                }
-                arr[index] = data;
+                insert(arr, index, data);
 
                 showCurrentArray(arr);
 
@@ -112,6 +109,13 @@ public class ControllerStep1 {
             }
 
         }
+    }
+
+    private static void insert(int[] arr, int index, int data) {
+        for (int i = getCountCurrentArray(arr) - 1; i >= index; i--) {
+            arr[i + 1] = arr[i];
+        }
+        arr[index] = data;
     }
 
     private static void deleteAsValue(int delVal, int[] arr) {
@@ -164,6 +168,9 @@ public class ControllerStep1 {
     }
 
     private static void delAllDuplicate(int[] array) {
+        /**
+         * TODO : 나중에 다시......
+         */
 //        IntStream.range(0, getCountCurrentArray(array)).filter(v->array[v] == )
         //         int[] arr2 = {10, 10, 20, 30, 40};
 //        Arrays.stream(array).forEach(value -> {
