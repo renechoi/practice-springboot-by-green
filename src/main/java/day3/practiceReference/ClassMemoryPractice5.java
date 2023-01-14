@@ -1,4 +1,4 @@
-package day3;
+package day3.practiceReference;
 
 
 import java.util.Arrays;

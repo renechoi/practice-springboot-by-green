@@ -1,4 +1,4 @@
-package day3;
+package day3.practiceReference;
 
 class Sample02 {
     int[] list;
