@@ -1,4 +1,4 @@
-package day3;
+package day3.practiceArray;
 
 import java.util.Arrays;
 import java.util.Scanner;
