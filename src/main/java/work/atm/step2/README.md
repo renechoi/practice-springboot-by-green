@@ -9,3 +9,6 @@ input --> command -- memberManager --> member --> account --> result
             |
             | --> result 
 
+
+[img](step2.png)
+
