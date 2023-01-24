@@ -19,9 +19,9 @@ public class Account {
         this.balance = this.balance - amount;
     }
 
-    private void validateAmount(int amount){
+    private void validateAmount(int amount) {
         if (this.balance < amount) {
-            throw  new IllegalArgumentException("잔액이 충분하지 않습니다.");
+            throw new IllegalArgumentException("잔액이 충분하지 않습니다.");
         }
     }
 

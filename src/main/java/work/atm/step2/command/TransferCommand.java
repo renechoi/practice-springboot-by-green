@@ -4,7 +4,7 @@ import work.atm.step2.Bank;
 import work.atm.step2.Result;
 import work.atm.step2.ui.InputView;
 
-public class TransferCommand implements Command{
+public class TransferCommand implements Command {
     @Override
     public boolean support(String userInput) {
         return "7".equals(userInput);

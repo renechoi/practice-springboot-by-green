@@ -5,7 +5,7 @@ import work.atm.step2.Member;
 import work.atm.step2.Result;
 import work.atm.step2.ui.InputView;
 
-public class RegisterCommand implements Command{
+public class RegisterCommand implements Command {
     @Override
     public boolean support(String userInput) {
         return "1".equals(userInput);
@@ -13,7 +13,7 @@ public class RegisterCommand implements Command{
 
     @Override
     public Result doBankJob(Bank bank) {
-        return bank.register(new Member(requestMemberName(),requestMemberId(), requestMemberPassword()));
+        return bank.register(new Member(requestMemberName(), requestMemberId(), requestMemberPassword()));
     }
 
     private String requestMemberName() {

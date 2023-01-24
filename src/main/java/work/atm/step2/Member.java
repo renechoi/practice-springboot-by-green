@@ -19,8 +19,12 @@ public class Member {
         this.account = account;
     }
 
-    public boolean matches(String requestedId) {
+    public boolean matchId(String requestedId) {
         return memberId.equals(requestedId);
+    }
+
+    public boolean matchIdAndPassword(String requestedId, String requestedPassword) {
+        return memberId.equals(requestedId) && password.equals(requestedPassword);
     }
 
     public void deposit(int amount) {
@@ -51,7 +55,7 @@ public class Member {
         this.memberNumber = memberNumber;
     }
 
-    public void setMemberAccountNumber(int accountNumber){
+    public void setMemberAccountNumber(int accountNumber) {
         this.account.setAccountNumber(accountNumber);
     }
 }

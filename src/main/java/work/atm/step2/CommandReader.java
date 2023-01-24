@@ -1,6 +1,6 @@
 package work.atm.step2;
 
-import work.atm.step2.command.*;
+import work.atm.step2.command.Command;
 
 import java.util.Arrays;
 import java.util.List;

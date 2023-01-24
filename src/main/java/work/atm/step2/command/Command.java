@@ -1,7 +1,6 @@
 package work.atm.step2.command;
 
 import work.atm.step2.Bank;
-import work.atm.step2.MemberManager;
 import work.atm.step2.Result;
 
 public interface Command {

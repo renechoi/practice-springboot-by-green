@@ -45,13 +45,18 @@ public class MemberManager {
         getMember(requestId).showAccount();
     }
 
-    public boolean match(String requestedId) {
-        return members.stream().anyMatch(member -> member.matches(requestedId));
+    public boolean exist(String requestedId) {
+        return members.stream().anyMatch(member -> member.matchId(requestedId));
+    }
+
+    public boolean match(String requestedId, String requestedPassword) {
+        return members.stream()
+                .anyMatch(member -> member.matchIdAndPassword(requestedId, requestedPassword));
     }
 
     private Member getMember(String currentlyLogin) {
         return members.stream()
-                .filter(member -> member.matches(currentlyLogin))
+                .filter(member -> member.matchId(currentlyLogin))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("찾는 아이디가 없습니다"));
     }
@@ -61,10 +66,10 @@ public class MemberManager {
     }
 
     private void assignMemberNumber(Member member) {
-        member.setMemberNumber(1000 + getMemberCount()-1);
+        member.setMemberNumber(1000 + getMemberCount() - 1);
     }
 
     private void assignAccountNumber(Member member) {
-        member.setMemberAccountNumber(1111 + ( (getMemberCount()-1) * 1111));
+        member.setMemberAccountNumber(1111 + ((getMemberCount() - 1) * 1111));
     }
 }

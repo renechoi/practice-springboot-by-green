@@ -28,10 +28,10 @@ public class Bank {
     public Result login(String requestedId, String requestedPassword) {
         try {
             validateLoginOn();
+            this.currentlyLogin = validateLoginIdAndPassword(requestedId, requestedPassword);
         } catch (RuntimeException e) {
             return new Result("로그인에 실패하였습니다 \n" + e.getMessage(), false);
         }
-        this.currentlyLogin = validateLoginIdAndPassword(requestedId);
         return new Result("로그인에 성공하였습니다", true);
     }
 
@@ -107,9 +107,9 @@ public class Bank {
         return requestedId;
     }
 
-    public String validateLoginIdAndPassword(String requestedId) {
-        if (!MEMBER_MANAGER.match(requestedId)) {
-            throw new IllegalArgumentException("로그인 가능한 아이디가 없습니다.");
+    public String validateLoginIdAndPassword(String requestedId, String requestedPassword) {
+        if (!MEMBER_MANAGER.match(requestedId, requestedPassword)) {
+            throw new IllegalArgumentException("로그인 가능한 아이디가 없거나 비밀번호가 일치하지 않습니다");
         }
         return requestedId;
     }
