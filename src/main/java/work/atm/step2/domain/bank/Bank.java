@@ -9,6 +9,7 @@ public class Bank {
     private String currentlyLogin = "-1";
 
     public Result register(Member member) {
+        validateRegisterId(member);
         try {
             MEMBER_MANAGER.add(member);
         } catch (RuntimeException e) {
@@ -16,6 +17,8 @@ public class Bank {
         }
         return new Result("회원 가입에 성공하였습니다", true);
     }
+
+
 
     public Result unRegister() {
         validateLoginOff();
@@ -89,6 +92,12 @@ public class Bank {
 
     public Result quit() {
         return new Result("종료합니다", true);
+    }
+
+    private void validateRegisterId(Member member) {
+        if (MEMBER_MANAGER.exist(member)) {
+            throw new IllegalArgumentException("이미 존재하는 아이디입니다.");
+        }
     }
 
     private void validateLoginOff() {

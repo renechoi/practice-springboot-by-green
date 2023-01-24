@@ -49,6 +49,10 @@ public class MemberManager {
         return members.stream().anyMatch(member -> member.matchId(requestedId));
     }
 
+    public boolean exist(Member requestedMember) {
+        return members.stream().anyMatch(member -> member.equals(requestedMember));
+    }
+
     public boolean match(String requestedId, String requestedPassword) {
         return members.stream()
                 .anyMatch(member -> member.matchIdAndPassword(requestedId, requestedPassword));
@@ -72,4 +76,6 @@ public class MemberManager {
     private void assignAccountNumber(Member member) {
         member.setMemberAccountNumber(1111 + ((getMemberCount() - 1) * 1111));
     }
+
+
 }

@@ -1,5 +1,7 @@
 package work.atm.step2.domain.member;
 
+import java.util.Objects;
+
 public class Member {
     public static final int initialAmount = 1000;
     private int memberNumber;
@@ -22,6 +24,7 @@ public class Member {
     public boolean matchId(String requestedId) {
         return memberId.equals(requestedId);
     }
+
 
     public boolean matchIdAndPassword(String requestedId, String requestedPassword) {
         return memberId.equals(requestedId) && password.equals(requestedPassword);
@@ -57,5 +60,18 @@ public class Member {
 
     public void setMemberAccountNumber(int accountNumber) {
         this.account.setAccountNumber(accountNumber);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Member member = (Member) o;
+        return Objects.equals(memberId, member.memberId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(memberId);
     }
 }
