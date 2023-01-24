@@ -1,4 +1,4 @@
-package work.atm.step2;
+package work.atm.step2.domain.member;
 
 public class Member {
     public static final int initialAmount = 1000;

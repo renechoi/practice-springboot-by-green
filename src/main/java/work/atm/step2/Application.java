@@ -1,6 +1,8 @@
 package work.atm.step2;
 
-public class Main {
+import work.atm.step2.domain.bank.Controller;
+
+public class Application {
     public static void main(String[] args) {
         Controller controller = new Controller();
         controller.openBank();

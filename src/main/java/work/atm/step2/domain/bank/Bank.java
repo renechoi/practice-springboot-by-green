@@ -1,4 +1,7 @@
-package work.atm.step2;
+package work.atm.step2.domain.bank;
+
+import work.atm.step2.domain.member.Member;
+import work.atm.step2.domain.member.MemberManager;
 
 public class Bank {
 

@@ -1,4 +1,4 @@
-package work.atm.step2;
+package work.atm.step2.domain.bank;
 
 import java.util.Objects;
 

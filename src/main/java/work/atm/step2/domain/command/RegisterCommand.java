@@ -1,8 +1,8 @@
-package work.atm.step2.command;
+package work.atm.step2.domain.command;
 
-import work.atm.step2.Bank;
-import work.atm.step2.Member;
-import work.atm.step2.Result;
+import work.atm.step2.domain.bank.Bank;
+import work.atm.step2.domain.member.Member;
+import work.atm.step2.domain.bank.Result;
 import work.atm.step2.ui.InputView;
 
 public class RegisterCommand implements Command {

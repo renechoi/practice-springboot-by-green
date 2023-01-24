@@ -1,6 +1,7 @@
-package work.atm.step2;
+package work.atm.step2.domain.command;
 
-import work.atm.step2.command.Command;
+import work.atm.step2.domain.bank.Bank;
+import work.atm.step2.domain.bank.Result;
 
 import java.util.Arrays;
 import java.util.List;

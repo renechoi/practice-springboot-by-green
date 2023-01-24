@@ -1,4 +1,4 @@
-package work.atm.step2;
+package work.atm.step2.domain.member;
 
 import java.util.ArrayList;
 import java.util.Arrays;

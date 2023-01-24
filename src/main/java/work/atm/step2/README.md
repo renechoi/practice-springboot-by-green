@@ -9,6 +9,3 @@ input --> command -- memberManager --> member --> account --> result
             |
             | --> result 
 
-
-// 로그인 기능... => state로 유지 되어야 함 
-

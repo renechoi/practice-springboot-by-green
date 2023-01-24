@@ -1,6 +1,6 @@
-package work.atm.step2;
+package work.atm.step2.domain.bank;
 
-import work.atm.step2.command.*;
+import work.atm.step2.domain.command.*;
 import work.atm.step2.ui.InputView;
 
 public class Controller {
@@ -19,21 +19,21 @@ public class Controller {
                 new QuitCommand()
         );
 
+        runBank(bank, commandReader);
+    }
+
+    private void runBank(Bank bank, CommandReader commandReader) {
         try {
+            bank.showCurrentlyLogin();
+            Result result = commandReader.handleCommand(bank, InputView.getSystemCommand());
+            result.show();
+            if (result.isQuit()) {
+                return;
+            }
             runBank(bank, commandReader);
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
             runBank(bank, commandReader);
         }
-    }
-
-    private void runBank(Bank bank, CommandReader commandReader) {
-        bank.showCurrentlyLogin();
-        Result result = commandReader.handleCommand(bank, InputView.getSystemCommand());
-        result.show();
-        if (result.isQuit()) {
-            return;
-        }
-        runBank(bank, commandReader);
     }
 }

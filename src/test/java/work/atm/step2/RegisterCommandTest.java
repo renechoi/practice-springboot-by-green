@@ -2,7 +2,7 @@ package work.atm.step2;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import work.atm.step2.command.RegisterCommand;
+import work.atm.step2.domain.command.RegisterCommand;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

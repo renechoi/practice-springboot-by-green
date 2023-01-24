@@ -1,6 +1,10 @@
 package work.atm.step2;
 
 import org.junit.jupiter.api.Test;
+import work.atm.step2.domain.bank.Bank;
+import work.atm.step2.domain.member.Account;
+import work.atm.step2.domain.member.Member;
+import work.atm.step2.domain.member.MemberManager;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 
