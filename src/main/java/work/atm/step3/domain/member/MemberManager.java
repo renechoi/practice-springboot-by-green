@@ -1,6 +1,5 @@
 package work.atm.step3.domain.member;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -51,7 +50,4 @@ public class MemberManager {
     private void assignMemberNumber(Member member) {
         member.setMemberNumber(1000 + getMemberCount() - 1);
     }
-
-
-
 }

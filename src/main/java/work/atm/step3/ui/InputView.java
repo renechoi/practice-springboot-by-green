@@ -29,6 +29,4 @@ public class InputView {
         System.out.printf("[%s] 금액을 입력하세요: \n", CommandType);
         return Integer.parseInt(scanner.nextLine());
     }
-
-
 }

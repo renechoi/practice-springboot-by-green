@@ -153,6 +153,6 @@ public class Bank {
                 member.getName(),
                 member.getMemberId(),
                 ACCOUNT_MANAGER.getBalance(member)
-                ));
+        ));
     }
 }

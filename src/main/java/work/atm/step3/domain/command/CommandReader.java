@@ -1,15 +1,14 @@
 package work.atm.step3.domain.command;
 
-import work.atm.step2.domain.bank.Bank;
-import work.atm.step2.domain.bank.Result;
-import work.atm.step2.domain.command.Command;
+import work.atm.step3.domain.bank.Bank;
+import work.atm.step3.domain.bank.Result;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class CommandReader {
 
-    private final List<work.atm.step2.domain.command.Command> commands;
+    private final List<Command> commands;
 
     public CommandReader(Command... commands) {
         this.commands = Arrays.asList(commands);

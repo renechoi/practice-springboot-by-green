@@ -1,14 +1,12 @@
 package work.atm.step3.domain.bank;
 
-import work.atm.step2.domain.bank.Bank;
-import work.atm.step2.domain.bank.Result;
-import work.atm.step2.domain.command.*;
-import work.atm.step2.ui.InputView;
+import work.atm.step3.domain.command.*;
+import work.atm.step3.ui.InputView;
 
 public class Controller {
 
     public void openBank() {
-        work.atm.step2.domain.bank.Bank bank = new work.atm.step2.domain.bank.Bank();
+        Bank bank = new Bank();
         CommandReader commandReader = new CommandReader(
                 new RegisterCommand(),
                 new UnregisterCommand(),

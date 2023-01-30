@@ -1,15 +1,12 @@
 package work.atm.step3.domain.member;
 
-
 import java.util.Objects;
 
 public class Member {
-    public static final int initialAmount = 1000;
     private int memberNumber;
     private String name;
     private String memberId;
     private String password;
-
 
     public Member(String name, String memberId, String password ) {
         this.name = name;

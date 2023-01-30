@@ -1,8 +1,5 @@
 package work.atm.step3.domain.jdbc;
 
-import work.atm.step2.domain.jdbc.ConnectionManager;
-import work.atm.step2.domain.jdbc.PreparedStatementSetter;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

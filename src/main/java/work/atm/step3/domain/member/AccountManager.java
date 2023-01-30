@@ -1,15 +1,14 @@
 package work.atm.step3.domain.member;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class AccountManager {
-
+    public static final int initialAmount = 1000;
     private List<Account> accounts = new ArrayList<>();
 
     public void create(Member member, int memberCount) {
-        Account account = new Account(generateAccountNumber(memberCount), 1000, member.getMemberId());
+        Account account = new Account(generateAccountNumber(memberCount), initialAmount, member.getMemberId());
         accounts.add(account);
     }
 
@@ -19,7 +18,6 @@ public class AccountManager {
                 .filter(account -> account.getMemberId().equals(currentlyLogin))
                 .findFirst()
                 .get());
-
     }
 
     public void deposit(Member member, int amount) {
@@ -34,7 +32,7 @@ public class AccountManager {
         return 1111 + ((memberCount - 1) * 1111);
     }
 
-    private Account getAccount(Member member){
+    private Account getAccount(Member member) {
         return accounts.stream()
                 .filter(account -> account.matchId(member.getMemberId()))
                 .findFirst()
@@ -43,7 +41,6 @@ public class AccountManager {
 
     public int getAccountNumber(Member member) {
         return getAccount(member).getAccountNumber();
-
     }
 
     public int getBalance(Member member) {
