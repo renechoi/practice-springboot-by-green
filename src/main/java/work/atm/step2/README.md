@@ -5,9 +5,9 @@
 3. 입금, 이체, 잔액조회, 전송, 조회 기능 
 
 
-input --> command -- memberManager --> member --> account --> result 
-            |
-            | --> result 
+input --> command --     -----  ------      memberManager --> member --> account --> result 
+            |                       |
+            | --> result            | ----- accountManager - account 
 
 
 [img](step2.png)

@@ -1,4 +1,4 @@
-package work.atm.step2.domain.member;
+package work.atm.step3.domain.member;
 
 public class Account {
     private int accountNumber;
@@ -6,6 +6,12 @@ public class Account {
     private final String memberId;
 
     public Account(int balance, String memberId) {
+        this.balance = balance;
+        this.memberId = memberId;
+    }
+
+    public Account(int accountNumber, int balance, String memberId) {
+        this.accountNumber = accountNumber;
         this.balance = balance;
         this.memberId = memberId;
     }
@@ -25,10 +31,6 @@ public class Account {
         }
     }
 
-    public String getMemberId() {
-        return memberId;
-    }
-
     public int getBalance() {
         return balance;
     }
@@ -39,5 +41,13 @@ public class Account {
 
     public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
+    }
+
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public boolean matchId(String memberId) {
+        return memberId.equals(this.memberId);
     }
 }
